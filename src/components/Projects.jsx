@@ -12,7 +12,11 @@ export default function Projects(){
         const response = await fetch('/projects.yml')
         const yamlText = await response.text()
         const data = yaml.load(yamlText)
-        setProjects(data.projects || [])
+        // Filter to only show featured projects that are not hidden (first 3)
+        const featuredProjects = (data.projects || [])
+          .filter(project => project.featured && !project.hide)
+          .slice(0, 3)
+        setProjects(featuredProjects)
       } catch (error) {
         console.error('Error loading projects:', error)
         setProjects([])

@@ -2,11 +2,59 @@ projects:
   - title: "Baseball Scorecard"
     description: "A modern twist on classic scorekeeping — ritual, stats, and joy combined."
     url: "https://example.com/baseball-scorecard"
+    featured: true
+    status: "Live"
+    tech_stack: ["React", "TypeScript", "Node.js", "MongoDB"]
+    year: "2024"
+    category: "Web Application"
+    hide: false
   
   - title: "Data Intake Forms"
     description: "Opinionated components to make complex data entry feel effortless."
     url: "https://example.com/data-intake-forms"
+    featured: true
+    status: "In Development"
+    tech_stack: ["React", "Python", "FastAPI", "PostgreSQL"]
+    year: "2024"
+    category: "Component Library"
+    hide: false
   
   - title: "Analytics Dashboards"
     description: "Readable, accessible dashboards with drilldowns that respect attention."
     url: "https://example.com/analytics-dashboards"
+    featured: true
+    status: "Live"
+    tech_stack: ["React", "D3.js", "Python", "Docker"]
+    year: "2023"
+    category: "Data Visualization"
+    hide: false
+  
+  - title: "Customer Portal"
+    description: "Self-service portal for customers to manage their accounts and view reports."
+    url: "https://example.com/customer-portal"
+    featured: false
+    status: "Live"
+    tech_stack: ["Vue.js", "Laravel", "MySQL", "Redis"]
+    year: "2023"
+    category: "Web Application"
+    hide: false
+  
+  - title: "API Gateway"
+    description: "Centralized API management with authentication, rate limiting, and monitoring."
+    url: "https://example.com/api-gateway"
+    featured: false
+    status: "Work in Progress"
+    tech_stack: ["Go", "Redis", "PostgreSQL", "Kubernetes"]
+    year: "2024"
+    category: "Infrastructure"
+    hide: false
+  
+  - title: "ML Pipeline"
+    description: "Automated machine learning pipeline for data processing and model deployment."
+    url: "https://example.com/ml-pipeline"
+    featured: false
+    status: "Planning"
+    tech_stack: ["Python", "scikit-learn", "Apache Airflow", "Docker"]
+    year: "2024"
+    category: "Machine Learning"
+    hide: true

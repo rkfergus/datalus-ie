@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react'
+import { Link } from 'react-router-dom'
 
 export default function Footer(){
   const [year, setYear] = useState('')
@@ -8,9 +9,9 @@ export default function Footer(){
       <div className="container footer-inner">
         <p>© <span>{year}</span> Datalus. All rights reserved.</p>
         <nav className="footer-nav" aria-label="Footer">
-          <a href="#projects">Projects</a>
-          <a href="#about">About</a>
-          <a href="#contact">Contact</a>
+          <Link to="/projects">Projects</Link>
+          <Link to="/about">About</Link>
+          <Link to="/contact">Contact</Link>
         </nav>
       </div>
     </footer>

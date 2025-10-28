@@ -19,7 +19,7 @@ export default function Header(){
         </button>
 
         <nav id="site-nav" className={"site-nav" + (open ? " open" : "")} aria-label="Primary">
-          <Link to="/#projects">Projects</Link>
+          <Link to="/projects">Projects</Link>
           <Link to="/about">About</Link>
           <Link to="/contact" className="btn btn-accent">Contact</Link>
         </nav>
