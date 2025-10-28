@@ -1,0 +1,16 @@
+/* Styles omitted for brevity in this commit message. See file for full content. */
+:root{
+  --mint:#1ABC9C;
+  --coral:#E67E73;
+  --black:#1B1F23;
+  --light:#F8F9FA;
+  --ash:#BCD2CC;
+  --lavender:#DBDFEA;
+  --ink:#111316;
+  --ink-2:#2a2f35;
+  --gray:#e6e9ed;
+  --radius:12px;
+  --radius-sm:8px;
+  --shadow:0 1px 2px rgba(0,0,0,.06), 0 8px 24px rgba(0,0,0,.08);
+}
+/* (full styles available in the local zip we prepared; paste the full file as needed) */
