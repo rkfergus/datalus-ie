@@ -6,7 +6,10 @@ export default function Header(){
   return (
     <header className="site-header" role="banner">
       <div className="container header-inner">
-        <Link className="logo" to="/" aria-label="Datalus home">Datalus</Link>
+        <Link className="logo" to="/" aria-label="Datalus home">
+          <img src="/logo.svg" alt="Datalus logo" className="logo-icon" />
+          Datalus
+        </Link>
 
         <button
           className="nav-toggle"
