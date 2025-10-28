@@ -1,31 +1,21 @@
-# Build stage
-FROM node:18-slim AS build
-
+# Build stage (use glibc-based node so native optional deps match)
+FROM node:18-bullseye-slim AS build
 WORKDIR /app
 
-# Copy package files
+# Copy package files (including package-lock.json) so npm ci is reproducible
 COPY package*.json ./
 
-# Install dependencies
-RUN npm ci
+# Install dependencies for this platform
+RUN npm ci --prefer-offline --no-audit
 
-# Copy source code
+# Copy application source and build
 COPY . .
-
-# Build the app
 RUN npm run build
 
-# Production stage
+# Production stage: small nginx image serving built assets
 FROM nginx:alpine
-
-# Copy built assets from build stage
 COPY --from=build /app/dist /usr/share/nginx/html
 
-# Copy custom nginx config if needed (optional)
-# COPY nginx.conf /etc/nginx/nginx.conf
-
-# Expose port 80
+# Expose port 80 and start nginx
 EXPOSE 80
-
-# Start nginx
 CMD ["nginx", "-g", "daemon off;"]
