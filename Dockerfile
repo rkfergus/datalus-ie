@@ -1,15 +1,13 @@
 # Build stage
-FROM node:18-alpine AS build
+FROM node:18-slim AS build
 
 WORKDIR /app
 
 # Copy package files
 COPY package*.json ./
 
-# Clean install with workaround for Alpine Linux rollup issue
-RUN rm -rf node_modules package-lock.json && \
-    npm cache clean --force && \
-    npm install
+# Install dependencies
+RUN npm ci
 
 # Copy source code
 COPY . .
