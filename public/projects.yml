@@ -1,0 +1,12 @@
+projects:
+  - title: "Baseball Scorecard"
+    description: "A modern twist on classic scorekeeping — ritual, stats, and joy combined."
+    url: "https://example.com/baseball-scorecard"
+  
+  - title: "Data Intake Forms"
+    description: "Opinionated components to make complex data entry feel effortless."
+    url: "https://example.com/data-intake-forms"
+  
+  - title: "Analytics Dashboards"
+    description: "Readable, accessible dashboards with drilldowns that respect attention."
+    url: "https://example.com/analytics-dashboards"

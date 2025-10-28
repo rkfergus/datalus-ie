@@ -1,11 +1,12 @@
 import React, { useState } from 'react'
+import { Link } from 'react-router-dom'
 
 export default function Header(){
   const [open, setOpen] = useState(false)
   return (
     <header className="site-header" role="banner">
       <div className="container header-inner">
-        <a className="logo" href="/" aria-label="Datalus home">Datalus</a>
+        <Link className="logo" to="/" aria-label="Datalus home">Datalus</Link>
 
         <button
           className="nav-toggle"
@@ -18,9 +19,9 @@ export default function Header(){
         </button>
 
         <nav id="site-nav" className={"site-nav" + (open ? " open" : "")} aria-label="Primary">
-          <a href="#projects">Projects</a>
-          <a href="#about">About</a>
-          <a href="#contact" className="btn btn-accent">Contact</a>
+          <Link to="/#projects">Projects</Link>
+          <Link to="/about">About</Link>
+          <Link to="/contact" className="btn btn-accent">Contact</Link>
         </nav>
       </div>
     </header>

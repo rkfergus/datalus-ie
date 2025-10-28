@@ -1,6 +1,27 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
+import yaml from 'js-yaml'
+import Project from './Project'
 
 export default function Projects(){
+  const [projects, setProjects] = useState([])
+
+  useEffect(() => {
+    // Load and parse the YAML file
+    const loadProjects = async () => {
+      try {
+        const response = await fetch('/projects.yml')
+        const yamlText = await response.text()
+        const data = yaml.load(yamlText)
+        setProjects(data.projects || [])
+      } catch (error) {
+        console.error('Error loading projects:', error)
+        setProjects([])
+      }
+    }
+
+    loadProjects()
+  }, [])
+
   return (
     <section id="projects" className="section">
       <div className="container">
@@ -10,32 +31,14 @@ export default function Projects(){
         </header>
 
         <div className="cards">
-          <article className="card">
-            <h3>Baseball Scorecard</h3>
-            <p>A modern twist on classic scorekeeping — ritual, stats, and joy combined.</p>
-            <div className="card-actions">
-              <a className="btn btn-small btn-primary" href="#" aria-disabled="true">Case Study</a>
-              <a className="btn btn-small btn-ghost" href="#" aria-disabled="true">Live Demo</a>
-            </div>
-          </article>
-
-          <article className="card">
-            <h3>Data Intake Forms</h3>
-            <p>Opinionated components to make complex data entry feel effortless.</p>
-            <div className="card-actions">
-              <a className="btn btn-small btn-primary" href="#" aria-disabled="true">Case Study</a>
-              <a className="btn btn-small btn-ghost" href="#" aria-disabled="true">Live Demo</a>
-            </div>
-          </article>
-
-          <article className="card">
-            <h3>Analytics Dashboards</h3>
-            <p>Readable, accessible dashboards with drilldowns that respect attention.</p>
-            <div className="card-actions">
-              <a className="btn btn-small btn-primary" href="#" aria-disabled="true">Case Study</a>
-              <a className="btn btn-small btn-ghost" href="#" aria-disabled="true">Live Demo</a>
-            </div>
-          </article>
+          {projects.map((project, index) => (
+            <Project 
+              key={index}
+              title={project.title}
+              description={project.description}
+              url={project.url}
+            />
+          ))}
         </div>
       </div>
     </section>
