@@ -5,7 +5,10 @@ export default function Hero(){
   return (
     <section className="hero">
       <div className="container hero-inner">
-        <h1>Data, Intuitively</h1>
+        <h1>
+          <img src="/logo.svg" alt="Datalus logo" className="hero-logo" />
+          Data, Intuitively
+        </h1>
         <p className="subhead">Helping people work with data through elegant, easy-to-use applications.</p>
         <div className="actions">
           <Link to="/projects" className="btn btn-primary">View Projects</Link>
