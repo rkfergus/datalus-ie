@@ -1,14 +1,19 @@
-# Build stage (use glibc-based node so native optional deps match)
+# syntax=docker/dockerfile:1.6
+# Build stage
 FROM node:18-bullseye-slim AS build
+
 WORKDIR /app
 
-# Copy package files (including package-lock.json) so npm ci is reproducible
+# Copy package files first for better caching
 COPY package*.json ./
 
-# Install dependencies for this platform
-RUN npm ci --prefer-offline --no-audit
+# Use cache mount like your working Flask Dockerfile + clean install
+RUN --mount=type=cache,target=/root/.npm \
+    rm -rf node_modules package-lock.json && \
+    npm cache clean --force && \
+    npm install
 
-# Copy application source and build
+# Copy source and build
 COPY . .
 RUN npm run build
 
