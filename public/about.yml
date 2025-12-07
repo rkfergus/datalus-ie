@@ -1,0 +1,26 @@
+about:
+  title: "Hi, I'm Keli Rene — Datalus is my solo studio"
+  paragraphs:
+    - "I’m a Site Reliability Engineer by trade, and an independent product developer pursuing projects I’m passionate about. My focus is on building reliable, user-friendly web applications that solve real problems."
+    - "Before Datalus, I was the team lead for Authorization and Authentication SRE at American Express and built analytics dashboards at Intel. I graduated from Arizona State University with degrees in Computer Science and European History."
+  resume:
+    label: "Download my resume (PDF)"
+    file: "/resume.pdf"
+    note: "Updated Oct 2025"
+  socials:
+    - label: "LinkedIn"
+      url: "https://www.linkedin.com/in/rene-ferguson"
+      icon: "linkedin"
+    - label: "GitHub"
+      url: "https://github.com/rkfergus"
+      icon: "github"
+  focus_heading: "How I can help"
+  focus_points:
+    - "Ship v1s: React/TypeScript frontends with Python or Node APIs, designed around the workflow and the data model."
+    - "Level up reliability: monitoring, alerting, and playbooks that keep production calm."
+    - "Tighten delivery: containers, CI/CD, and environments that match production so releases stay boring."
+    - "Translate between product, design, and engineering to keep scope crisp and momentum high."
+  highlight:
+    title: "Want to build something great together?"
+    cta_text: "Start a conversation"
+    cta_link: "/contact"
